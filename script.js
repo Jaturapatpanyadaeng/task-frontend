@@ -58,7 +58,7 @@ const addTask = async ( title, priority ) => {
 
     try {
 
-        await fetch( 'http://localhost:3000/tasks', {
+        await fetch( 'https://tash-backend.onrender.com//tasks', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json' // ต้องบอกเซิร์ฟเวอร์ว่าส่ง JSON ไป
@@ -82,7 +82,7 @@ const toggleTaskStatus = async ( id ) => {
 
     try {
 
-        await fetch( `http://localhost:3000/tasks/${id}`, {
+        await fetch( `https://tash-backend.onrender.com//tasks/${id}`, {
             method: 'PUT'
         } ) ;
 
@@ -101,7 +101,7 @@ const deleteTask = async ( id ) => {
 
     try {
 
-        await fetch( `http://localhost:3000/tasks/${id}`, {
+        await fetch( `https://tash-backend.onrender.com//tasks/${id}`, {
             method: 'DELETE'
         } ) ;
 
@@ -129,7 +129,7 @@ const fetchTasks = async ( ) => {
         taskListElement.innerHTML = "<p style='text-align: center;'>⏳ กำลังดึงข้อมูลจากเซิร์ฟเวอร์...</p>" ;
 
         // ใช้ fetch ไปขอข้อมูล และใส่ await เพื่อบอกให้ "รอจนกว่าข้อมูลจะมาถึง"
-        const response = await fetch( 'http://localhost:3000/tasks' ) ;
+        const response = await fetch( 'https://tash-backend.onrender.com//tasks' ) ;
 
         // แปลงผลลัพธ์ที่ได้ให้กลายเป็นออบเจกต์ JSON
         const data = await response.json( ) ;
